@@ -1,0 +1,22 @@
+<h1 align="center"> Liste des Fournisseurs </h1>
+votre ecole est : {{ecole}}
+pour ajouter un fournisseur , cliquer <a href="{{path('provider_ajout')}}"> ici </a>
+<table align="center" border="1">
+<tr> 
+<th> ID </th>
+ <th>Name</th>
+ <th>Email </th>
+<th> Adress </th>
+<th> supprimer </th>
+
+</tr>
+{% for provider in providers %}
+<tr>
+<td>{{provider.id}}</td>
+<td>{{provider.name}}</td>
+<td>{{provider.email}}</td>
+<td>{{provider.adress}}</td>
+<td><a href="{{ path('provider_delete2', {'id': provider.id}) }}">Supprimer</a></td>
+</tr>
+{% endfor %}
+</table>
